@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'; 
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'; 
 
 export default function Footer() {
   return (
@@ -8,11 +8,14 @@ export default function Footer() {
           © {new Date().getFullYear()} Giordano Bruno. All rights reserved.
         </p>
         <div className="flex space-x-6">
-          <a href="https://github.com/zNetero/zNetero" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+          <a href="https://github.com/zNetero/zNetero" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-0.5">
             <FaGithub size={24} />
           </a>
-          <a href="https://www.linkedin.com/in/giordano-bruno-desenvolvedor" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/giordano-bruno-desenvolvedor" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-0.5">
             <FaLinkedin size={24} />
+          </a>
+          <a href="https://www.instagram.com/giordano_brun" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors transform hover:-translate-y-0.5">
+            <FaInstagram size={24} />
           </a>
         </div>
       </div>
