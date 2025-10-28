@@ -30,9 +30,15 @@ function ProjectCard({ title, description, imgUrl, githubUrl, liveUrl }: Project
           <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
             {t('projects_github')}
           </a>
-          <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
-            {t('projects_live')}
-          </a>
+          {liveUrl !== '#' ? (
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+              {t('projects_live')}
+            </a>
+          ) : (
+            <span className="text-gray-500 cursor-not-allowed">
+              {t('projects_live')}
+            </span>
+          )}
         </div>
       </div>
     </div>
