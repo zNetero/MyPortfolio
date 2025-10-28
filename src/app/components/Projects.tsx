@@ -50,6 +50,13 @@ export default function Projects() {
       githubUrl: 'https://github.com/zNetero/API-de-Contatos',
       liveUrl: '#',
     },
+    {
+      title: 'Love Distance',
+      description: 'A full-stack app built with React, Node.js, and TypeScript to help long-distance couples stay connected.',
+      githubUrl: 'https://github.com/zNetero/love-distance-site',
+      liveUrl: 'https://love-distance-frontend.vercel.app/dashboard',
+      imgUrl: '/image.png',
+    },
   ];
 
   return (
