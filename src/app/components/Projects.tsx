@@ -1,5 +1,7 @@
+"use client";
 import Image from 'next/image';
 import Reveal from './Reveal';
+import { useLanguage } from '../i18n/LanguageProvider';
 type Project = {
   title: string;
   description: string;
@@ -9,6 +11,7 @@ type Project = {
 };
 
 function ProjectCard({ title, description, imgUrl, githubUrl, liveUrl }: Project) {
+  const { t } = useLanguage();
   return (
     <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden transform transition-transform duration-200 hover:scale-[1.02] hover:shadow-2xl">
       {imgUrl ? (
@@ -25,10 +28,10 @@ function ProjectCard({ title, description, imgUrl, githubUrl, liveUrl }: Project
         <p className="text-gray-400 mb-4">{description}</p>
         <div className="flex space-x-4">
           <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
-            GitHub
+            {t('projects_github')}
           </a>
           <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
-            Live Demo
+            {t('projects_live')}
           </a>
         </div>
       </div>
@@ -37,6 +40,7 @@ function ProjectCard({ title, description, imgUrl, githubUrl, liveUrl }: Project
 }
 
 export default function Projects() {
+  const { t } = useLanguage();
   
   const myProjects: Project[] = [
     {
@@ -63,7 +67,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 glow-title">Projects</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 glow-title">{t('projects_title')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {myProjects.map((project) => (
             <Reveal key={project.title}>
@@ -72,7 +76,7 @@ export default function Projects() {
               description={project.description}
               imgUrl={project.imgUrl}
               githubUrl={project.githubUrl}
-              liveUrl={project.liveUrl}
+                liveUrl={project.liveUrl}
               />
             </Reveal>
           ))}

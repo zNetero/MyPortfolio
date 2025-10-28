@@ -1,6 +1,9 @@
+"use client";
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { useLanguage } from '../i18n/LanguageProvider';
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section 
       id="home" 
@@ -8,17 +11,17 @@ export default function Hero() {
     >
       <div className="max-w-2xl px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            Hi, I am <span className="text-blue-400">Giordano Bruno</span>
+            {t('hero_title_prefix')} <span className="text-blue-400">Giordano Bruno</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Computer Science Student | Backend Developer
+            {t('hero_subtitle')}
         </p>
         <div className="flex justify-center space-x-4">
           <a
             href="#projects"
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-200 hover:scale-[1.03] hover:shadow-lg"
           >
-            My Projects
+            {t('hero_btn_projects')}
           </a>
           <a
             href="/RESUME-GIORDANO.pdf"
@@ -27,7 +30,7 @@ export default function Hero() {
             download
             className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-200 hover:scale-[1.03] hover:shadow-lg"
           >
-            Download CV
+            {t('hero_btn_cv')}
           </a>
         </div>
         <div className="flex justify-center mt-6 space-x-6 text-gray-400">

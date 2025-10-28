@@ -8,9 +8,12 @@ type SkillGroup = {
   skills: Skill[];
 };
 
+"use client";
 import Reveal from './Reveal';
+import { useLanguage } from '../i18n/LanguageProvider';
 
 export default function Skills() {
+  const { t } = useLanguage();
   const groups: SkillGroup[] = [
     { 
       title: 'Frontend Development', 
@@ -41,12 +44,12 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 glow-title">My Skills</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 glow-title">{t('skills_title')}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {groups.map((group) => (
             <Reveal key={group.title} className="rounded-2xl bg-gray-800/60 p-6 shadow transition-transform duration-200 hover:scale-[1.01] hover:shadow-2xl">
-              <h3 className="text-xl font-semibold mb-6 text-blue-300">{group.title}</h3>
+              <h3 className="text-xl font-semibold mb-6 text-blue-300">{group.title === 'Frontend Development' ? t('skills_frontend') : t('skills_backend')}</h3>
 
               {group.skills.length === 0 ? (
                 <p className="text-gray-400"></p>

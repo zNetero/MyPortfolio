@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
+import { useLanguage } from "../i18n/LanguageProvider";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [feedback, setFeedback] = useState<string>("");
 
@@ -21,25 +23,25 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus("success");
-        setFeedback("Message sent successfully. I will get back to you soon.");
+        setFeedback(t('contact_success'));
         form.reset();
       } else {
         setStatus("error");
-        setFeedback("There was an error sending your message. Please try again later.");
+        setFeedback(t('contact_error'));
       }
     } catch (_) {
       setStatus("error");
-      setFeedback("There was an error sending your message. Please try again later.");
+      setFeedback(t('contact_error'));
     }
   }
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-indigo-950 to-slate-900">
       <div className="container mx-auto px-4 max-w-lg">
-        <h2 className="text-4xl font-bold text-center mb-12 glow-title">Let's Talk!</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 glow-title">{t('contact_title')}</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <input type="hidden" name="_subject" value="New contact from portfolio" />
           <div>
-            <label htmlFor="name" className="block text-lg font-medium mb-2">Name</label>
+            <label htmlFor="name" className="block text-lg font-medium mb-2">{t('contact_name')}</label>
             <input 
               type="text" 
               id="name" 
@@ -49,7 +51,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-lg font-medium mb-2">Email</label>
+            <label htmlFor="email" className="block text-lg font-medium mb-2">{t('contact_email')}</label>
             <input 
               type="email" 
               id="email" 
@@ -59,7 +61,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-lg font-medium mb-2">Message</label>
+            <label htmlFor="message" className="block text-lg font-medium mb-2">{t('contact_message')}</label>
             <textarea 
               id="message" 
               name="message" 
@@ -77,9 +79,9 @@ export default function Contact() {
             <button 
               type="submit"
               disabled={status === "submitting"}
-              className="bg-blue-600 hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all text-lg"
+              className="bg-blue-600 hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-transform duration-200 hover:scale-[1.03] hover:shadow-lg text-lg"
             >
-              {status === "submitting" ? "Sending..." : "Send Message"}
+              {status === "submitting" ? t('contact_sending') : t('contact_send')}
             </button>
           </div>
         </form>
