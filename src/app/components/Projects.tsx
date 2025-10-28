@@ -35,15 +35,14 @@ function ProjectCard({ title, description, imgUrl, githubUrl, liveUrl }: Project
   );
 }
 
-// Componente principal da seção
 export default function Projects() {
-  // You will fill this with your real projects
+  
   const myProjects: Project[] = [
     {
       title: 'Finance Control API',
       description: 'API built with JavaScript, Sequelize, and PostgreSQL focused on scalability and performance.',
       githubUrl: 'https://github.com/zNetero/Finance-API',
-      liveUrl: '#', // Deployment link
+      liveUrl: '#', 
     },
     {
       title: 'Contact Control API',

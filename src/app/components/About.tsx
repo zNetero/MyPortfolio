@@ -8,7 +8,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
             <Image
-              src="/Foto-1-100.jpg" // Profile photo placed in 'public/'
+              src="/Foto-1-100.jpg"
               alt="Your Photo"
               width={300}
               height={300}
@@ -16,14 +16,13 @@ export default function About() {
             />
           </div>
           
-          {/* Text */}
           <div>
             <p className="text-lg text-gray-300 mb-4">
-              I'm a Computer Science student, passionate about solving 
+              I'm a Software Developer, passionate about solving 
               problems and building efficient solutions
             </p>
             <p className="text-lg text-gray-300">
-              I have experience with Typescript , PHP , and Node.js. 
+              I specialize in backend technologies like <strong>TypeScript, Node.js, and PHP</strong>, and I am always looking for the next opportunity to learn and build.
               I'm always learning and seeking new challenges to grow as a developer.
             </p>
           </div>

@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Instale: npm install react-icons
+import { FaGithub, FaLinkedin } from 'react-icons/fa'; 
 
 export default function Footer() {
   return (
