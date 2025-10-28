@@ -23,7 +23,6 @@ export default function About() {
             </p>
             <p className="text-lg text-gray-300">
               I specialize in backend technologies like <strong>TypeScript, Node.js, and PHP</strong>, and I am always looking for the next opportunity to learn and build.
-              I'm always learning and seeking new challenges to grow as a developer.
             </p>
           </div>
         </div>
