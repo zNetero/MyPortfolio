@@ -33,9 +33,9 @@ export default function Contact() {
     }
   }
   return (
-    <section id="contact" className="py-20 bg-gray-800">
+    <section id="contact" className="py-20 bg-gradient-to-b from-indigo-950 to-slate-900">
       <div className="container mx-auto px-4 max-w-lg">
-        <h2 className="text-4xl font-bold text-center mb-12">Let's Talk!</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 glow-title">Let's Talk!</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <input type="hidden" name="_subject" value="New contact from portfolio" />
           <div>
