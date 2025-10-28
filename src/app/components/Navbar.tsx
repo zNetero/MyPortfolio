@@ -9,13 +9,16 @@ export default function Navbar() {
         </Link>
         
         <div className="hidden md:flex space-x-6 text-lg">
-          <Link href="#about" className="hover:text-blue-400 transition-colors">
+          <Link href="#about" className="hover:text-blue-400 hover:underline underline-offset-8 decoration-blue-400 transition-colors">
             About
           </Link>
-          <Link href="#projects" className="hover:text-blue-400 transition-colors">
+          <Link href="#projects" className="hover:text-blue-400 hover:underline underline-offset-8 decoration-blue-400 transition-colors">
             Projects
           </Link>
-          <Link href="#contact" className="hover:text-blue-400 transition-colors">
+          <Link href="#skills" className="hover:text-blue-400 hover:underline underline-offset-8 decoration-blue-400 transition-colors">
+            Skills
+          </Link>
+          <Link href="#contact" className="hover:text-blue-400 hover:underline underline-offset-8 decoration-blue-400 transition-colors">
             Contact
           </Link>
         </div>
