@@ -1,3 +1,7 @@
+"use client";
+import Reveal from './Reveal';
+import { useLanguage } from '../i18n/LanguageProvider';
+
 type Skill = {
   name: string;
   level: 'Beginner' | 'Intermediate' | 'Advanced';
@@ -7,10 +11,6 @@ type SkillGroup = {
   title: string;
   skills: Skill[];
 };
-
-"use client";
-import Reveal from './Reveal';
-import { useLanguage } from '../i18n/LanguageProvider';
 
 export default function Skills() {
   const { t } = useLanguage();
